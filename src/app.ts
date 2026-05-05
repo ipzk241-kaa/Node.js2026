@@ -7,9 +7,9 @@ export const app = express();
 
 app.get('/health', (req, res) => {
   if (mongoose.connection.readyState === 1) {
-    res.status(200).json({ status: 'OK', database: 'Connected' }); // [cite: 156]
+    res.status(200).json({ status: 'OK', database: 'Connected' });
   } else {
-    res.status(503).json({ status: 'Service Unavailable', database: 'Disconnected' }); // [cite: 157]
+    res.status(503).json({ status: 'Service Unavailable', database: 'Disconnected' });
   }
 });
 
