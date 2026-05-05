@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3001:3001"
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+      MONGODB_URI: mongodb+srv://ipzk241kaa:fozrzZC6byIubJuM@cluster0.0dttvyk.mongodb.net/lab4?retryWrites=true&w=majority
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
